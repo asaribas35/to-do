@@ -7,45 +7,33 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 class List extends React.Component {
 
+
+ 
     render() {
+
 
         return (
             <div style={{ width: '95%' }}>
-                <Box display="flex" p={1} height="3em">
-                    <Box p={1} flexGrow={1} >
-                        <Paper elevation={3} style={{ height: '2em'}}> <span style={{ lineHeight:'30px' , textAlign:'center', margin:'1em'}} >todo</span> </Paper>
-                    </Box>
-                    <Box  >
-                        <IconButton  >
-                            <DeleteIcon />
-                        </IconButton>
-                    </Box>
 
-                </Box>
+                {this.props.todos.map((todo) => (
+                    <Box display="flex" p={1} height="2em" key={todo.id} >
+                        <Box p={1} flexGrow={1} >
+                            <Paper elevation={1} style={{ height: '2.2em' }}> <span style={{ lineHeight: '2em', textAlign: 'center', margin: '1em' }} > {todo.text} </span> </Paper>
+                        </Box>
+                        <Box  >
+                            <IconButton onClick={(e) => this.props.deleteToDoP(todo)} >
+                                <DeleteIcon />
+                            </IconButton>
+                        </Box>
 
-                <Box display="flex" p={1} height="3em">
-                    <Box p={1} flexGrow={1} >
-                        <Paper elevation={3} style={{ height: '2em'}}> <span style={{ lineHeight:'30px' , textAlign:'center', margin:'1em'}} >todo</span> </Paper>
                     </Box>
-                    <Box >
-                        <IconButton   >
-                            <DeleteIcon />
-                        </IconButton>
-                    </Box>
+                ))}
 
-                </Box>
 
-                <Box display="flex" p={1} height="3em">
-                    <Box p={1} flexGrow={1} >
-                        <Paper elevation={3} style={{ height: '2em'}}> <span style={{ lineHeight:'30px' , textAlign:'center', margin:'1em'}} >todo</span> </Paper>
-                    </Box>
-                    <Box >
-                        <IconButton   >
-                            <DeleteIcon />
-                        </IconButton>
-                    </Box>
 
-                </Box>
+
+
+
 
             </div>
 
