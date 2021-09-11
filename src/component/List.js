@@ -1,20 +1,33 @@
 import React from "react";
 import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
+
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 class List extends React.Component {
 
-render() {
+    render() {
 
-    return (
-        <div >
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <Paper >todo</Paper>
-          </Grid>
-        </Grid>
-    
-        </div>
+        return (
+            <div style={{ width: '100%' }}>
+                <Box display="flex" p={1} >
+                    <Box p={1} flexGrow={1} >
+                        <Paper elevation={3} style={{ height: '2em', margin: '1.2em'}}> <span style={{ lineHeight:'30px' , textAlign:'center', margin:'1em'}} >todo</span> </Paper>
+                    </Box>
+                    <Box p={1} >
+                        <IconButton style={{ margin: '0.5em', marginLeft: '-1em' }}  >
+                            <DeleteIcon />
+                        </IconButton>
+                    </Box>
+
+                </Box>
+
+
+            </div>
+
+
+
 
 
         )
@@ -22,4 +35,4 @@ render() {
     }
 }
 
-export default List 
+export default List
