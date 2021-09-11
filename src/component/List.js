@@ -10,19 +10,42 @@ class List extends React.Component {
     render() {
 
         return (
-            <div style={{ width: '100%' }}>
-                <Box display="flex" p={1} >
+            <div style={{ width: '95%' }}>
+                <Box display="flex" p={1} height="3em">
                     <Box p={1} flexGrow={1} >
-                        <Paper elevation={3} style={{ height: '2em', margin: '1.2em'}}> <span style={{ lineHeight:'30px' , textAlign:'center', margin:'1em'}} >todo</span> </Paper>
+                        <Paper elevation={3} style={{ height: '2em'}}> <span style={{ lineHeight:'30px' , textAlign:'center', margin:'1em'}} >todo</span> </Paper>
                     </Box>
-                    <Box p={1} >
-                        <IconButton style={{ margin: '0.5em', marginLeft: '-1em' }}  >
+                    <Box  >
+                        <IconButton  >
                             <DeleteIcon />
                         </IconButton>
                     </Box>
 
                 </Box>
 
+                <Box display="flex" p={1} height="3em">
+                    <Box p={1} flexGrow={1} >
+                        <Paper elevation={3} style={{ height: '2em'}}> <span style={{ lineHeight:'30px' , textAlign:'center', margin:'1em'}} >todo</span> </Paper>
+                    </Box>
+                    <Box >
+                        <IconButton   >
+                            <DeleteIcon />
+                        </IconButton>
+                    </Box>
+
+                </Box>
+
+                <Box display="flex" p={1} height="3em">
+                    <Box p={1} flexGrow={1} >
+                        <Paper elevation={3} style={{ height: '2em'}}> <span style={{ lineHeight:'30px' , textAlign:'center', margin:'1em'}} >todo</span> </Paper>
+                    </Box>
+                    <Box >
+                        <IconButton   >
+                            <DeleteIcon />
+                        </IconButton>
+                    </Box>
+
+                </Box>
 
             </div>
 
