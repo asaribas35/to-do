@@ -8,7 +8,11 @@ class TField extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
+        if(this.inputRef.current.value === ""){
+            return null
+        }
         this.props.addToDoP(this.inputRef.current.value)
+        e.currentTarget.reset();
         
     }
 
