@@ -47,7 +47,7 @@ class App extends React.Component {
 
         return (
           <div>
-            <Container maxWidth="sm" style={{ backgroundColor: '#cfe8fc', height: '100vh' }}>
+            <Container maxWidth="sm" style={{ backgroundColor: '#F1F1F1', height: '100vh' }}>
                 <TField 
                 addToDoP={this.addToDo}
                 />

@@ -10,6 +10,7 @@ class TField extends React.Component {
         e.preventDefault();
         if(this.inputRef.current.value === ""){
             return null
+            
         }
         this.props.addToDoP(this.inputRef.current.value)
         e.currentTarget.reset();
@@ -24,18 +25,17 @@ class TField extends React.Component {
                 <form onSubmit={this.handleSubmit} style={{ display: "flex", padding: '1em' }}>
                     <Input
                         placeholder="Todo"
-                        inputProps={{
-                            "aria-label": "Description"
-                        }}
+
                         
                         inputRef={this.inputRef}
-                        style={{ width: "85%" }}
+                        style={{ width: "85%", }}
+                        
                     />
 
                     <Button
                         type="submit"
                         variant="contained"
-                        color="primary"
+                        
                         style={{ width: "10%" }}
                     >
                         Add
