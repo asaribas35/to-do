@@ -2,7 +2,7 @@ import React from "react";
 import Container from '@material-ui/core/Container';
 import TField from './textField'
 import List from './List'
-
+import uniqueId from 'lodash/uniqueId';
 
 
 
@@ -12,14 +12,7 @@ class App extends React.Component {
 
     state = {
         list : [
-            {
-                "id": 1,
-                "text": "go market"
-            },
-            {
-                "id": 2,
-                "text": "go school"
-            }
+
             ]
     }
 
@@ -30,6 +23,22 @@ class App extends React.Component {
         this.setState({
             list: newList
         })
+        
+    }
+
+    addToDo = (todo) => {
+
+        let x =  uniqueId("a-")
+        const newElement = {
+            "id": x,
+            "text": todo
+        }
+        console.log(newElement)
+
+        this.setState({
+            list: [...this.state.list, newElement]
+          })
+
     }
 
     render() {
@@ -39,7 +48,9 @@ class App extends React.Component {
         return (
           <div>
             <Container maxWidth="sm" style={{ backgroundColor: '#cfe8fc', height: '100vh' }}>
-                <TField />
+                <TField 
+                addToDoP={this.addToDo}
+                />
                 <List 
                 todos={this.state.list}
                 deleteToDoP={this.deleteToDo}

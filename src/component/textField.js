@@ -1,36 +1,44 @@
 import React from "react";
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import Box from '@material-ui/core/Box';
+import Input from "@material-ui/core/Input";
+import Button from "@material-ui/core/Button";
 
 class TField extends React.Component {
+
+    inputRef = React.createRef();
+
+    handleSubmit = e => {
+        e.preventDefault();
+        this.props.addToDoP(this.inputRef.current.value)
+        
+    }
+
 
     render() {
         return (
             <div style={{ width: '100%' }}>
-                <Box display="flex" p={1} >
-                    <Box p={1} flexGrow={1} >
-                        <TextField 
-                            id="standard-full-width"
-                            label="Todo"
-                            style={{ margin: 8 }}
-                            
-                            
-                            fullWidth
-                            margin="normal"
-                            InputLabelProps={{
-                                shrink: true,
-                            }}
-                        />
-                    </Box>
-                    <Box p={1} >
-                        <Button size="large" variant="contained" color="primary" >
-                            ADD
-                        </Button>
-                    </Box>
 
-                </Box>
+                <form onSubmit={this.handleSubmit} style={{ display: "flex", padding: '1em' }}>
+                    <Input
+                        placeholder="Todo"
+                        inputProps={{
+                            "aria-label": "Description"
+                        }}
+                        
+                        inputRef={this.inputRef}
+                        style={{ width: "85%" }}
+                    />
 
+                    <Button
+                        type="submit"
+                        variant="contained"
+                        color="primary"
+                        style={{ width: "10%" }}
+                    >
+                        Add
+                    </Button>
+
+
+                </form>
 
             </div>
         )

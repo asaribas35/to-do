@@ -15,8 +15,9 @@ class List extends React.Component {
         return (
             <div style={{ width: '95%' }}>
 
-                {this.props.todos.map((todo) => (
-                    <Box display="flex" p={1} height="2em" key={todo.id} >
+                {this.props.todos.map((todo,i) => (
+                         
+                    <Box display="flex" p={1} height="2em" key={i}>
                         <Box p={1} flexGrow={1} >
                             <Paper elevation={1} style={{ height: '2.2em' }}> <span style={{ lineHeight: '2em', textAlign: 'center', margin: '1em' }} > {todo.text} </span> </Paper>
                         </Box>
@@ -27,6 +28,7 @@ class List extends React.Component {
                         </Box>
 
                     </Box>
+                    
                 ))}
 
 
